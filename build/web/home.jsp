@@ -100,7 +100,7 @@
                                         <c:forEach items="${top6Book}" var="t">
                                             <div class="single-most-product bd mb-18">
                                                 <div class="most-product-img">
-                                                    <a href="#"><img src="${t.image}" alt="book" /></a>
+                                                    <a href="detail?pid=${t.id}"><img src="${t.image}" alt="book" /></a>
                                             </div>
                                             <div class="most-product-content">
                                                 <div class="product-rating">
@@ -112,7 +112,7 @@
                                                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <h4><a href="#">${t.name}</a></h4>
+                                                <h4><a href="detail?pid=${t.id}">${t.name}</a></h4>
                                                 <div class="product-price">
                                                     <ul>
                                                         <li>${t.price}</li>
@@ -431,17 +431,15 @@
                         <!-- tab-area-end -->
                         <!-- pagination-area-start -->
                         <div class="pagination-area mt-50">
-                            <div class="list-page-2">
-                                <p>Items 1-9 of 11</p>
-                            </div>
+                            
                             <div class="page-number">
-                                <ul>
-                                    <li><a href="#" class="active">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#" class="angle"><i class="fa fa-angle-right"></i></a></li>
-                                </ul>
+                                <c:forEach begin="1" end="4" var="i">
+                                    
+                                    <a href="page?index=${i}">${i}</a>
+                                    
+                                    
+                                </c:forEach>
+                                    
                             </div>
                         </div>
                         <!-- pagination-area-end -->

@@ -31,20 +31,21 @@
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="account-area text-end">
                     <ul>
-                        <c:if test="${sessionScope.account.isAdmin==1}">
-                            <li><a href="login.jsp">Account Manager</a></li>
-                            </c:if>
-                            <c:if test="${sessionScope.isSeller==1}">
-                            <li><a href="login.jsp">Book Manager</a></li>
-                            </c:if>
-
                         <c:if test="${sessionScope.account!=null}">
                             <li>Welcome to the store ${sessionScope.account.username}</li>
                             <li><a href="logout">Logout</a></li>
-                            </c:if>
-                            <c:if test="${sessionScope.account==null}">
+                        </c:if>
+                        <c:if test="${sessionScope.account.isAdmin==1}">
+                            <li><a href="login.jsp">Account Manager</a></li>
+                        </c:if>
+                        <c:if test="${sessionScope.account.isSeller==1}">
+                            <li><a href="book_manager">Book Manager</a></li>
+                        </c:if>
+
+                        
+                        <c:if test="${sessionScope.account==null}">
                             <li><a href="login.jsp">Sign in</a></li>
-                            </c:if>
+                        </c:if>
 
 
                     </ul>
