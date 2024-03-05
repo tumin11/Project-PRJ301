@@ -6,27 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-12">
-                <div class="language-area">
-                    <ul>
-                        <li><img src="${pageContext.request.contextPath}/img/flag/1.jpg" alt="flag" /><a href="#">English<i class="fa fa-angle-down"></i></a>
-                            <div class="header-sub">
-                                <ul>
-                                    <li><a href="#"><img src="${pageContext.request.contextPath}/img/flag/2.jpg" alt="flag" />france</a></li>
-                                    <li><a href="#"><img src="${pageContext.request.contextPath}/img/flag/3.jpg" alt="flag" />croatia</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li><a href="#">USD $<i class="fa fa-angle-down"></i></a>
-                            <div class="header-sub dolor">
-                                <ul>
-                                    <li><a href="#">EUR €</a></li>
-                                    <li><a href="#">USD $</a></li>
 
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="account-area text-end">
@@ -34,18 +14,16 @@
                         <c:if test="${sessionScope.account!=null}">
                             <li>Welcome to the store ${sessionScope.account.username}</li>
                             <li><a href="logout">Logout</a></li>
-                        </c:if>
-                        <c:if test="${sessionScope.account.isAdmin==1}">
-                            <li><a href="login.jsp">Account Manager</a></li>
-                        </c:if>
+                            </c:if>
+
                         <c:if test="${sessionScope.account.isSeller==1}">
                             <li><a href="book_manager">Book Manager</a></li>
-                        </c:if>
+                            </c:if>
 
-                        
+
                         <c:if test="${sessionScope.account==null}">
                             <li><a href="login.jsp">Sign in</a></li>
-                        </c:if>
+                            </c:if>
 
 
                     </ul>
@@ -102,7 +80,7 @@
             </div>
             <div class="col-lg-6 col-md-4 col-12">
                 <div class="logo-area text-center logo-xs-mrg">
-                    <a href="index.html"><img src="${pageContext.request.contextPath}/img/logo/logo1.png" alt="logo" /></a>
+                    <a href="home"><img src="${pageContext.request.contextPath}/img/logo/logo1.png" alt="logo" /></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-12">
@@ -121,46 +99,13 @@
                         text-align: center;
                         width: 30px;
                     }
+                    
                 </style>
                 <div class="my-cart">
                     <ul>
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i>My Cart</a>
-                            <span>2</span>
-                            <div class="mini-cart-sub">
-                                <div class="cart-product">
-                                    <div class="single-cart">
-                                        <div class="cart-img">
-                                            <a href="#"><img src="${pageContext.request.contextPath}/img/product/1.jpg" alt="book" /></a>
-                                        </div>
-                                        <div class="cart-info">
-                                            <h5><a href="#">Joust Duffle Bag</a></h5>
-                                            <p>1 x £60.00</p>
-                                        </div>
-                                        <div class="cart-icon">
-                                            <a href="#"><i class="fa fa-remove"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="single-cart">
-                                        <div class="cart-img">
-                                            <a href="#"><img src="${pageContext.request.contextPath}/img/product/3.jpg" alt="book" /></a>
-                                        </div>
-                                        <div class="cart-info">
-                                            <h5><a href="#">Chaz Kangeroo Hoodie</a></h5>
-                                            <p>1 x £52.00</p>
-                                        </div>
-                                        <div class="cart-icon">
-                                            <a href="#"><i class="fa fa-remove"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cart-totals">
-                                    <h5>Total <span>£12.00</span></h5>
-                                </div>
-                                <div class="cart-bottom">
-                                    <a class="view-cart" href="cart.html">view cart</a>
-                                    <a href="checkout.html">Check out</a>
-                                </div>
-                            </div>
+                        
+                        <li><a href="Cart.jsp"><i class="fa fa-shopping-cart"></i>My Cart</a>
+                            
                         </li>
                     </ul>
                 </div>

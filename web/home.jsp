@@ -10,7 +10,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Koparion – Book Shop HTML5 Template</title>
+        <title>Home</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -138,7 +138,7 @@
                     </div>
                     <div class="col-lg-9 col-md-12 col-12 order-lg-2 order-1">
                         <div class="category-image mb-30">
-                            <a href="#"><img src="${pageContext.request.contextPath}/img/banner/32.jpg" alt="banner" /></a>
+                            <a href="#"><img src="${pageContext.request.contextPath}/img/banner/39.jpg" alt="banner" /></a>
                         </div>
                         <div class="section-title-5 mb-30">
                            

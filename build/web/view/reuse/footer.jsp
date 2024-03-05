@@ -9,11 +9,11 @@
                     <div class="footer-top-menu bb-2">
                         <nav>
                             <ul>
-                                <li><a href="#">home</a></li>
-                                <li><a href="#">Enable Cookies</a></li>
+                                <li><a href="home">home</a></li>
+                               
                                 <li><a href="#">Privacy and Cookie Policy</a></li>
-                                <li><a href="#">contact us</a></li>
-                                <li><a href="#">blog</a></li>
+                                <li><a href="contact.jsp">contact us</a></li>
+                                
                             </ul>
                         </nav>
                     </div>
@@ -35,8 +35,8 @@
                                 </div>
                                 <div class="footer-mid-menu">
                                     <ul>
-                                        <li><a href="about.html">About us</a></li>
-                                        <li><a href="#">Prices drop </a></li>
+                                        <li><a href="about.jsp">About us</a></li>
+                                        
                                         <li><a href="#">New products</a></li>
                                         <li><a href="#">Best sales</a></li>
                                     </ul>
@@ -50,10 +50,10 @@
                                 </div>
                                 <div class="footer-mid-menu">
                                     <ul>
-                                        <li><a href="contact.html">Contact us</a></li>
+                                        <li><a href="contact.jsp">Contact us</a></li>
                                         <li><a href="#">Sitemap</a></li>
                                         <li><a href="#">Stores</a></li>
-                                        <li><a href="register.html">My account </a></li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -67,8 +67,8 @@
                                     <ul>
                                         <li><a href="contact.html">Addresses</a></li>
                                         <li><a href="#">Credit slips </a></li>
-                                        <li><a href="#"> Orders</a></li>
-                                        <li><a href="#">Personal info</a></li>
+                                        <li><a href="Cart.jsp"> Orders</a></li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -82,8 +82,8 @@
                         </div>
                         <div class="footer-contact">
                             <p class="adress">
-                                <span>My Company</span>
-                                Your address goes here.
+                                
+                                Your address:FPT University
                             </p>
                             <p><span>Call us now:</span> 0123456789</p>
                             <p><span>Email:</span> demo@example.com</p>
@@ -100,7 +100,7 @@
             <div class="row bt-2">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="copy-right-area">
-                        <p>&copy; 2022 <strong> Koparion </strong> Mede with ❤️ by <a href="https://hasthemes.com/" target="_blank"><strong>HasThemes</strong></a></p>
+                        <p>&copy; 2024 <strong> BookStore </strong> Made ❤️ by <a href="https://hasthemes.com/" target="_blank"><strong>Tumin</strong></a></p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">

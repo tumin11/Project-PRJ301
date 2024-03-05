@@ -12,7 +12,7 @@
                 <div class="breadcrumbs-menu">
                     <ul>
                         <li><a href="home">Home</a></li>
-                        <li><a href="#" class="active">Shop</a></li>
+                        <li><a href="home" class="active">Shop</a></li>
                     </ul>
                 </div>
             </div>

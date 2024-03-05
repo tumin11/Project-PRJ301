@@ -3,19 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/PRJ301/Project/src/java/controller/AddController.java</file>
-            <file>file:/C:/PRJ301/Project/src/java/controller/SearchController.java</file>
-            <file>file:/C:/PRJ301/Project/web/BookManager.jsp</file>
-            <file>file:/C:/PRJ301/Project/src/java/DAL/DBContext.java</file>
-            <file>file:/C:/PRJ301/Project/web/detail.jsp</file>
-            <file>file:/C:/PRJ301/Project/src/java/controller/EditController.java</file>
-            <file>file:/C:/PRJ301/Project/src/java/controller/PageController.java</file>
-            <file>file:/C:/PRJ301/Project/src/java/controller/DetailController.java</file>
-            <file>file:/C:/PRJ301/Project/web/home.jsp</file>
-            <file>file:/C:/PRJ301/Project/src/java/controller/DeleteController.java</file>
-            <file>file:/C:/PRJ301/Project/web/edit.jsp</file>
-            <file>file:/C:/PRJ301/Project/src/java/controller/HomeController.java</file>
-            <file>file:/C:/PRJ301/Project/src/java/controller/BookManagerController.java</file>
+            <file>file:/C:/PRJ301/Project/web/contact.jsp</file>
+            <file>file:/C:/PRJ301/Project/web/view/reuse/footer.jsp</file>
         </group>
     </open-files>
 </project-private>

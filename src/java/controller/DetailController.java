@@ -73,7 +73,7 @@ public class DetailController extends HttpServlet {
             ArrayList<Type> list_type = db.getListType();
             request.setAttribute("detail", b);
             request.setAttribute("listType", list_type);
-            request.setAttribute("top3Book", top6_book);
+            request.setAttribute("top6Book", top6_book);
             request.getRequestDispatcher("detail.jsp").forward(request, response);
 
         } catch (ClassNotFoundException ex) {
