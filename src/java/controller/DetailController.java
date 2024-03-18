@@ -71,6 +71,9 @@ public class DetailController extends HttpServlet {
             Book b = db.getListBookByID(id);
             ArrayList<Book> top6_book = db.getTop6Book();
             ArrayList<Type> list_type = db.getListType();
+            db.updateViews();
+            int view=db.getViews(Integer.parseInt(id));
+            request.setAttribute("view", view);
             request.setAttribute("detail", b);
             request.setAttribute("listType", list_type);
             request.setAttribute("top6Book", top6_book);

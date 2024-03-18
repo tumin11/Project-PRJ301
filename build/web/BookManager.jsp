@@ -1,6 +1,11 @@
-
+<%-- 
+    Document   : ManagerProduct
+    Created on : Dec 28, 2020, 5:19:02 PM
+    Author     : trinh
+--%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +13,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Book Manager</title>
+        <title>Book Manager </title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -21,18 +26,55 @@
                 width: 200px;
                 height: 120px;
             }
+            .table-title {
+                padding-bottom: 15px;
+                background: yellow;
+                color: black;
+                padding: 16px 30px;
+                margin: -20px -25px 10px;
+                border-radius: 3px 3px 0 0;
+
+            }
+            body {
+                color: #566787;
+                background: darkturquoise;
+                font-family: 'Varela Round', sans-serif;
+                font-size: 13px;
+            }
+            .table-wrapper {
+    padding: 20px 25px;
+    margin: 30px 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    background-color: #F2EFE3;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #F2EFE3;
+}
         </style>
     <body>
+        <div class="language-area">
+                        <fmt:setLocale value="en_US"/>
+                        <c:if test="${param.lang=='vi'}">
+                            <fmt:setLocale value="vi_VN"/>
+                        </c:if>
+               
+                        
+
+                        
+                    </div>
+                
+                <fmt:setBundle basename="language.english" var="a"/>
         <div class="container">
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>Manage <b>Product</b></h2>
+                            <h2><fmt:message bundle="${a}" key="27"/></h2>
                         </div>
                         <div class="col-sm-6">
-                            <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
-                            <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+                            <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span><fmt:message bundle="${a}" key="28"/></span></a>
+
                         </div>
                     </div>
                 </div>
@@ -46,10 +88,10 @@
                                 </span>
                             </th>
                             <th>ID</th>
-                            <th>Name</th>
-                            <th>Image</th>
-                            <th>Price</th>
-                            <th>Actions</th>
+                            <th><fmt:message bundle="${a}" key="29"/></th>
+                            <th><fmt:message bundle="${a}" key="30"/></th>
+                            <th><fmt:message bundle="${a}" key="3"/></th>
+                            <th><fmt:message bundle="${a}" key="31"/></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -75,21 +117,8 @@
                         </c:forEach>
                     </tbody>
                 </table>
-                <div class="clearfix">
-                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                    <ul class="pagination">
-                        <li class="page-item disabled"><a href="#">Previous</a></li>
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                    </ul>
-                </div>
-            </div>
-            <a href="home"><button type="button" class="btn btn-primary">Back to home</button>
 
+            </div>
         </div>
         <!-- Edit Modal HTML -->
         <div id="addEmployeeModal" class="modal fade">
@@ -102,28 +131,27 @@
                         </div>
                         <div class="modal-body">					
                             <div class="form-group">
-                                <label>Name</label>
+                                <label><fmt:message bundle="${a}" key="29"/></label>
                                 <input name="name" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>Quantity</label>
+                                <label><fmt:message bundle="${a}" key="34"/></label>
                                 <input name="quantity" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>Price</label>
+                                <label><fmt:message bundle="${a}" key="3"/></label>
                                 <input name="price" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>Image</label>
-                                <input name="image" type="text" class="form-control" required>
+                                <label><fmt:message bundle="${a}" key="30"/></label>
+                                <textarea name="image" class="form-control" required></textarea>
                             </div>
-                            
                             <div class="form-group">
-                                <label>Description</label>
+                                <label><fmt:message bundle="${a}" key="35"/></label>
                                 <textarea name="description" class="form-control" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label>Category</label>
+                                <label><fmt:message bundle="${a}" key="36"/></label>
                                 <select name="category" class="form-select" aria-label="Default select example">
                                     <c:forEach items="${listType}" var="o">
                                         <option value="${o.id}">${o.type}</option>
@@ -133,15 +161,104 @@
 
                         </div>
                         <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input type="submit" class="btn btn-success" value="Add">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="<fmt:message bundle="${a}" key="37"/>">
+                            <input type="submit" class="btn btn-success" value="<fmt:message bundle="${a}" key="38"/>">
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        
-        
-    <script src="${pageContext.request.contextPath}/js/manager.js" type="text/javascript"></script>
-</body>
+        <div class="header-top-area">
+    <div class="container">
+        <div class="row">
+           
+            <div class="col-lg-6 col-md-6 col-12">
+                
+                    <div class="language-area">
+                        <fmt:setLocale value="en_US"/>
+                        <c:if test="${param.lang=='vi'}">
+                            <fmt:setLocale value="vi_VN"/>
+                        </c:if>
+               
+                        <form action="" method="get">
+                            <input type="radio" name="lang" value="en">
+                            <label for="en">English</label>
+                            <input type="radio" name="lang" value="vi">
+                            <label for="vi">Vietnamese</label>
+                            <input type="submit" value="Change Language"/>
+                        </form>
+
+                        
+                    </div>
+                
+                <fmt:setBundle basename="language.english" var="a"/>
+
+
+            </div>
+            
+        </div>
+                 <a href="home"><button type="button" class="btn btn-primary"><fmt:message bundle="${a}" key="32"/></button>
+    </div>
+</div>
+        <!-- Edit Modal HTML -->
+        <div id="editEmployeeModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Edit Employee</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <textarea class="form-control" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="text" class="form-control" required>
+                            </div>					
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="<fmt:message bundle="${a}" key="6"/>">
+                            <input type="submit" class="btn btn-info" value="Save">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Delete Modal HTML -->
+        <div id="deleteEmployeeModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Delete Product</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <p>Are you sure you want to delete these Records?</p>
+                            <p class="text-warning"><small>This action cannot be undone.</small></p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-danger" value="Delete">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="${pageContext.request.contextPath}/js/manager.js" type="text/javascript"></script>
+        <script>
+
+        </script>
+    </body>
 </html>

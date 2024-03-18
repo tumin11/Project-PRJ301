@@ -66,6 +66,7 @@ public class LoginController extends HttpServlet {
     throws ServletException, IOException {
        String username=request.getParameter("user");
        String password=request.getParameter("pass");
+       request.setCharacterEncoding("UTF-8");
        try {
             DBContext db = new DBContext();
             Account a=db.login(username, password);

@@ -39,6 +39,13 @@
 
     </head>
     <body class="cart">
+        <fmt:setLocale value="en_US"/>
+                        <c:if test="${param.lang=='vi'}">
+                            <fmt:setLocale value="vi_VN"/>
+                        </c:if>
+               
+                       
+        <fmt:setBundle basename="language.english" var="a" scope="session"/>
         <header>
             <!-- header-top-area-start -->
             <jsp:include page="view/reuse/header.jsp"></jsp:include>
@@ -62,7 +69,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="entry-header-title">
-                                    <h2>Cart</h2>
+                                    <h2><fmt:message bundle="${a}" key="39"/></h2>
                                 </div>
                             </div>
                         </div>
@@ -80,12 +87,12 @@
                                         <table>
                                             <thead>
                                                 <tr>
-                                                    <th class="product-thumbnail">Image</th>
-                                                    <th class="product-name">Product</th>
-                                                    <th class="product-price">Price</th>
-                                                    <th class="product-quantity">Quantity</th>
-                                                    <th class="product-subtotal">Total</th>
-                                                    <th class="product-remove">Remove</th>
+                                                    <th class="product-thumbnail"><fmt:message bundle="${a}" key="30"/></th>
+                                                    <th class="product-name"><fmt:message bundle="${a}" key="40"/></th>
+                                                    <th class="product-price"><fmt:message bundle="${a}" key="3"/></th>
+                                                    <th class="product-quantity"><fmt:message bundle="${a}" key="34"/></th>
+                                                    <th class="product-subtotal"><fmt:message bundle="${a}" key="41"/></th>
+                                                    <th class="product-remove"><fmt:message bundle="${a}" key="42"/></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -120,7 +127,7 @@
 
                                             </c:when>
                                             <c:otherwise>
-                                                <p>Your cart is empty.</p>
+                                                <p><fmt:message bundle="${a}" key="43"/>.</p>
                                             </c:otherwise>
                                         </c:choose>
 
@@ -138,14 +145,14 @@
                             <div class="buttons-cart mb-30">
                                 <ul>
 
-                                    <li><a href="home">Continue Shopping</a></li>
+                                    <li><a href="home"><fmt:message bundle="${a}" key="44"/></a></li>
                                 </ul>
                             </div>
 
                         </div>
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="cart_totals">
-                                <h2>Cart Totals</h2><br>
+                                <h2><fmt:message bundle="${a}" key="45"/></h2><br>
                                 <c:choose>
                                     <c:when test="${not empty sessionScope.cart.items}">
                                         <table>
@@ -153,7 +160,7 @@
 
 
                                                 <tr class="order-total">
-                                                    <th>Total</th>
+                                                    <th><fmt:message bundle="${a}" key="41"/></th>
                                                     <td>
                                                         <strong>
                                                             <span class="amount"><fmt:formatNumber pattern="##.#" value="${sessionScope.cart.getTotal()}" type="currency"/></span>

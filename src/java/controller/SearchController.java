@@ -74,7 +74,7 @@ public class SearchController extends HttpServlet {
             request.setAttribute("listBook", list_book);
             request.setAttribute("listType", list_type);
             request.setAttribute("top6Book", top6_book);
-            request.getRequestDispatcher("home.jsp").forward(request, response);
+            request.getRequestDispatcher("type.jsp").forward(request, response);
 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(SearchController.class.getName()).log(Level.SEVERE, null, ex);

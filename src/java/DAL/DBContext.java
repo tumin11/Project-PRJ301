@@ -245,9 +245,8 @@ public class DBContext {
                 String password = rs.getString("password");
 
                 int isSeller = rs.getInt("isSeller");
-                int isAdmin = rs.getInt("isAdmin");
 
-                Account a = new Account(id, username, password, isSeller, isAdmin);
+                Account a = new Account(id, username, password, isSeller);
                 return a;
 
             }
@@ -274,9 +273,8 @@ public class DBContext {
                 String password = rs.getString("password");
 
                 int isSeller = rs.getInt("isSeller");
-                int isAdmin = rs.getInt("isAdmin");
 
-                Account a = new Account(id, username, password, isSeller, isAdmin);
+                Account a = new Account(id, username, password, isSeller);
                 return a;
 
             }
@@ -292,7 +290,7 @@ public class DBContext {
     public void signup(String username, String password) {
         try {
 
-            String sql = "insert into Account values(?,?,0,0)";
+            String sql = "insert into Account values(?,?,0)";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, username);
             statement.setString(2, password);
@@ -443,5 +441,44 @@ public class DBContext {
 
     }
 
+    public int getViews(int book_id) {
+        int count = 0;
+        try {
+
+            String sql = "select v.viewCount from Views v join Book b on v.book_id=b.id\n"
+                    + "where b.id=?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, book_id);
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                count = rs.getInt("viewCount");
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return count;
+
+    }
+
+    public void updateViews() {
+
+        try {
+
+            String sql = "update Views\n"
+                    + "set viewCount=viewCount+1";
+            PreparedStatement statement = connection.prepareStatement(sql);
+
+            statement.executeUpdate();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
     
+
 }

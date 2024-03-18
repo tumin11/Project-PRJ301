@@ -1,6 +1,7 @@
 
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
@@ -40,6 +41,15 @@
     </head>
 
     <body class="shop">
+        <fmt:setLocale value="en_US"/>
+                        <c:if test="${param.lang=='vi'}">
+                            <fmt:setLocale value="vi_VN"/>
+                        </c:if>
+               
+                      
+        
+        <fmt:setBundle basename="language.english" var="a" scope="session"/>
+        
         <!-- header-area-start -->
         <header>
             <!-- header-top-area-start -->
@@ -64,10 +74,10 @@
                         <div class="col-lg-3 col-md-12 col-12 order-lg-1 order-2 mt-sm-50 mt-xs-40">
                             <div class="shop-left">
                                 <div class="section-title-5 mb-30">
-                                    <h2>Shopping Options</h2>
+                                    <h2><fmt:message bundle="${a}" key="1"/></h2>
                                 </div>
                                 <div class="left-title mb-20">
-                                    <h4>Category</h4>
+                                    <h4><fmt:message bundle="${a}" key="2"/></h4>
                                 </div>
                                 <div class="left-menu mb-30">
                                     <ul>
@@ -80,7 +90,7 @@
                                 </div>
                               
                                 <div class="left-title mb-20">
-                                    <h4>Price</h4>
+                                    <h4><fmt:message bundle="${a}" key="3"/></h4>
                                 </div>
                                 <div class="left-menu mb-30">
                                     <ul>
@@ -88,11 +98,11 @@
                                         <li><a href="price?price1=50.00&price2=99.99">$50.00-$99.99</a></li>
                                         <li><a href="price?price1=100.00&price2=149.99">$100.00-$149.99</a></li>
                                         <li><a href="price?price1=150.00&price2=199.99">$150.00-$199.99</a></li>
-                                        <li><a href="price?price1=200.00&price2=9999.9">$200.00-and above</a></li>
+                                        <li><a href="price?price1=200.00&price2=9999.9"><fmt:message bundle="${a}" key="61"/></a></li>
                                     </ul>
                                 </div>
                                 <div class="left-title mb-20">
-                                    <h4>Top 6 Book</h4>
+                                    <h4>Top 6 <fmt:message bundle="${a}" key="4"/></h4>
                                 </div>
                                 <div class="random-area mb-30">
                                     <div class="product-active-2 owl-carousel">
@@ -142,7 +152,7 @@
                         </div>
                         <div class="section-title-5 mb-30">
                            
-                               <h2>Book</h2> 
+                               <h2>Books</h2> 
                             
                             
                         </div>

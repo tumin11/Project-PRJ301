@@ -80,7 +80,7 @@ public class PageController extends HttpServlet {
             request.setAttribute("listBook",list);
             request.setAttribute("listType", list_type);
             request.setAttribute("top6Book", top6_book);
-            request.getRequestDispatcher("home.jsp").forward(request, response);
+            request.getRequestDispatcher("page.jsp").forward(request, response);
 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(BookManagerController.class.getName()).log(Level.SEVERE, null, ex);

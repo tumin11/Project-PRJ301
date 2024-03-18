@@ -1,5 +1,5 @@
 
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -23,12 +23,20 @@
             }
         </style>
     <body>
+        <fmt:setLocale value="en_US"/>
+                        <c:if test="${param.lang=='vi'}">
+                            <fmt:setLocale value="vi_VN"/>
+                        </c:if>
+               
+                        
+        
+        <fmt:setBundle basename="language.english" var="a" scope="session"/>
         <div class="container">
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>Edit <b>Product</b></h2>
+                            <h2><fmt:message bundle="${a}" key="50"/></h2>
                         </div>
                         <div class="col-sm-6">
                         </div>
@@ -40,7 +48,7 @@
                     <div class="modal-content">
                         <form action="edit" method="post">
                             <div class="modal-header">						
-                                <h4 class="modal-title">Add Product</h4>
+                                <h4 class="modal-title"><fmt:message bundle="${a}" key="51"/></h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             </div>
                             <div class="modal-body">					
@@ -49,27 +57,27 @@
                                     <input value="${detail.id}" name="id" type="text" class="form-control" readonly required>
                                 </div>
                                 <div class="form-group">
-                                    <label>Name</label>
+                                    <label><fmt:message bundle="${a}" key="29"/></label>
                                     <input value="${detail.name}" name="name" type="text" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>Image</label>
+                                    <label><fmt:message bundle="${a}" key="30"/></label>
                                     <input value="${detail.image}" name="image" type="text" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>Price</label>
+                                    <label><fmt:message bundle="${a}" key="3"/></label>
                                     <input value="${detail.price}" name="price" type="text" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>Quantity</label>
+                                    <label><fmt:message bundle="${a}" key="34"/></label>
                                     <textarea name="quantity" class="form-control" required>${detail.quantity}</textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label>Description</label>
+                                    <label><fmt:message bundle="${a}" key="35"/></label>
                                     <textarea name="description" class="form-control" required>${detail.description}</textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label>Category</label>
+                                    <label><fmt:message bundle="${a}" key="36"/></label>
                                     <select name="category" class="form-select" aria-label="Default select example">
                                         <c:forEach items="${listType}" var="o">
                                             <option value="${o.id}">${o.type}</option>
@@ -79,7 +87,7 @@
 
                             </div>
                             <div class="modal-footer">
-                                <input type="submit" class="btn btn-success" value="Edit">
+                                <input type="submit" class="btn btn-success" value="<fmt:message bundle="${a}" key="52"/>">
                             </div>
                         </form>
                     </div>

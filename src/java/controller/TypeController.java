@@ -72,7 +72,7 @@ public class TypeController extends HttpServlet {
             request.setAttribute("listType", list_type);
             request.setAttribute("top6Book", top6_book);
 
-            request.getRequestDispatcher("home.jsp").forward(request, response);
+            request.getRequestDispatcher("type.jsp").forward(request, response);
            
            
         } catch (ClassNotFoundException ex) {

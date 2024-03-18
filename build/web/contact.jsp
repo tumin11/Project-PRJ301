@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -35,6 +36,13 @@
 
     </head>
     <body class="product-details">
+        <fmt:setLocale value="en_US"/>
+                        <c:if test="${param.lang=='vi'}">
+                            <fmt:setLocale value="vi_VN"/>
+                        </c:if>
+               
+                        
+        <fmt:setBundle basename="language.english" var="a" scope="session"/>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -66,16 +74,16 @@
 				<div class="row">
 					<div class="col-lg-6 col-md-6 col-12">
 						<div class="contact-info">
-							<h3>Contact info</h3>
+							<h3><fmt:message bundle="${a}" key="46"/></h3>
 							<ul>
 								<li>
 									<i class="fa fa-map-marker"></i>
-									<span>Address: </span>
+									<span><fmt:message bundle="${a}" key="47"/>: </span>
 									FPT University 							
 								</li>
 								<li>
 									<i class="fa fa-envelope"></i>
-									<span>Phone: </span>
+									<span><fmt:message bundle="${a}" key="48"/>: </span>
 									 0123 4567 890 
 								</li>
 								<li>

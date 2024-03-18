@@ -13,17 +13,17 @@ public class Account {
     private String username;
     private String password;
     private int isSeller;
-    private int isAdmin;
+   
 
     public Account() {
     }
 
-    public Account(int id, String username, String password, int isSeller, int isAdmin) {
+    public Account(int id, String username, String password, int isSeller) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.isSeller = isSeller;
-        this.isAdmin = isAdmin;
+        
     }
 
     public int getId() {
@@ -58,12 +58,6 @@ public class Account {
         this.isSeller = isSeller;
     }
 
-    public int getIsAdmin() {
-        return isAdmin;
-    }
-
-    public void setIsAdmin(int isAdmin) {
-        this.isAdmin = isAdmin;
-    }
+    
     
 }

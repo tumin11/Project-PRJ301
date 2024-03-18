@@ -54,7 +54,7 @@
                         </div>
                         <div class="col-lg-5 col-md-6 col-12">
                             <div class="about-content">
-                                <h3>Why<span>We are?</span></h3>
+                                <h3>Why We are?</h3>
                                 <p>In a world that races against time, we are a haven for those who seek to pause, reflect, and dive into the boundless worlds offered by books. Tumin Bookstore is more than just a place to purchase books?it is a sanctuary for the mind and soul, where stories come alive and imagination takes flight.
 
  Every shelf in our bookstore is a gateway to different lives, distant places, and groundbreaking ideas. Our carefully selected collection is designed to challenge, comfort, inspire, and entertain.
@@ -73,7 +73,7 @@ We are here because we understand the value of knowledge and the power of storyt
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="single-misson">
-                                <h3>Why<span>choose us?</span></h3>
+                                <h3>Why choose us?</h3>
                                 <p>At Tumin Bookstore, we believe that every book has the power to open minds and inspire hearts. Our passion for literature is the cornerstone of our bookstore, offering an oasis for those who seek knowledge, adventure, and a moment of tranquility in the pages of a good read. We're committed to providing a diverse selection of books that cater to the curious minds of our community. Whether it's the latest bestseller, a literary classic, or a hidden gem, we strive to make it available to you.</p>
                             </div>
                         </div>

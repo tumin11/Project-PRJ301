@@ -1,28 +1,50 @@
 
 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div class="header-top-area">
     <div class="container">
         <div class="row">
+           
             <div class="col-lg-6 col-md-6 col-12">
+                
+                    <div class="language-area">
+                        <fmt:setLocale value="en_US"/>
+                        <c:if test="${param.lang=='vi'}">
+                            <fmt:setLocale value="vi_VN"/>
+                        </c:if>
+               
+                        <form action="" method="get">
+                            <input type="radio" name="lang" value="en">
+                            <label for="en">English</label>
+                            <input type="radio" name="lang" value="vi">
+                            <label for="vi">Vietnamese</label>
+                            <input type="submit" value="Change Language"/>
+                        </form>
+
+                        
+                    </div>
+                
+                <fmt:setBundle basename="language.english" var="a"/>
+
 
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="account-area text-end">
                     <ul>
                         <c:if test="${sessionScope.account!=null}">
-                            <li>Welcome to the store ${sessionScope.account.username}</li>
-                            <li><a href="logout">Logout</a></li>
+                            <li><fmt:message bundle="${a}" key="5"/> ${sessionScope.account.username}</li>
+                            <li><a href="logout"><fmt:message bundle="${a}" key="6"/></a></li>
                             </c:if>
 
                         <c:if test="${sessionScope.account.isSeller==1}">
-                            <li><a href="book_manager">Book Manager</a></li>
+                            <li><a href="book_manager"><fmt:message bundle="${a}" key="7"/></a></li>
                             </c:if>
 
 
                         <c:if test="${sessionScope.account==null}">
-                            <li><a href="login.jsp">Sign in</a></li>
+                            <li><a href="login.jsp"><fmt:message bundle="${a}" key="8"/></a></li>
                             </c:if>
 
 
@@ -72,7 +94,7 @@
                         }
                     </style>
                     <form action="search">
-                        <input name="search" type="text" placeholder="Search" />
+                        <input name="search" type="text" placeholder="<fmt:message bundle="${a}" key="59"/>" />
                         <a href="search"><button type="submit"><i class="fa fa-search"></i></button></a>
 
                     </form>
@@ -99,13 +121,13 @@
                         text-align: center;
                         width: 30px;
                     }
-                    
+
                 </style>
                 <div class="my-cart">
                     <ul>
-                        
-                        <li><a href="Cart.jsp"><i class="fa fa-shopping-cart"></i>My Cart</a>
-                            
+
+                        <li><a href="Cart.jsp"><i class="fa fa-shopping-cart"></i><fmt:message bundle="${a}" key="60"/></a>
+
                         </li>
                     </ul>
                 </div>

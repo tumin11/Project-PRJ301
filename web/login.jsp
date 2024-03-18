@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -33,9 +34,17 @@
         <title>Login Form</title>
     </head>
     <body>
+        <fmt:setLocale value="en_US"/>
+                        <c:if test="${param.lang=='vi'}">
+                            <fmt:setLocale value="vi_VN"/>
+                        </c:if>
+               
+                       
+        
+        <fmt:setBundle basename="language.english" var="a" scope="session"/>
         <header>
             <!-- header-top-area-start -->
-            <jsp:include page="view/reuse/header.jsp"></jsp:include>
+            
             <jsp:include page="view/reuse/menu.jsp"></jsp:include>
 
             </header>
@@ -47,7 +56,7 @@
                         <div class="col-lg-12">
                             <div class="breadcrumbs-menu">
                                 <ul>
-                                    <li><a href="home">Home</a></li>
+                                    <li><a href="home"><fmt:message bundle="${a}" key="9"/></a></li>
 
                                 </ul>
                             </div>
@@ -75,30 +84,28 @@
                                 background-color: #F2EFE3;
                             }
                         </style>
-                        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
+                        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> <fmt:message bundle="${a}" key="8"/></h1>
                         <p class="text-danger">${mess}</p>
                     <input name="user"  type="text" id="inputEmail" class="form-control" placeholder="Username" required="" autofocus="">
                     <input name="pass"  type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
 
-                    <div class="form-group form-check">
-                        <input name="remember" value="1" type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                    </div>
 
-                    <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+
+                    <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> <fmt:message bundle="${a}" key="8"/></button>
                     <hr>
-                    <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Sign up New Account</button>
+                    <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> <fmt:message bundle="${a}" key="53"/></button>
                 </form>
 
-                <form action="sign_up"  class="form-signup">
-                    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign up</h1>
-                    <input name="user" type="text" id="user-name" class="form-control" placeholder="User name" required="" autofocus="">
-                    <input name="pass" type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="" pattern=".{2,}" required title="Password must contain at least two characters.">
+                <form action="sign_up" class="form-signup">
+                    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> <fmt:message bundle="${a}" key="54"/></h1>
+                    <input name="user" type="text" id="user-name" class="form-control" placeholder="User name" required="" autofocus="" pattern="(?=.*\d).{4,}" title="<fmt:message bundle="${a}" key="56"/>">
+                    <input name="pass" type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="" pattern=".{2,}" required title="<fmt:message bundle="${a}" key="57"/>">
                     <input name="repass" type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required autofocus="">
 
-                    <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
-                    <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
+                    <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> <fmt:message bundle="${a}" key="54"/></button>
+                    <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> <fmt:message bundle="${a}" key="55"/></a>
                 </form>
+
                 <br>
 
             </div>
