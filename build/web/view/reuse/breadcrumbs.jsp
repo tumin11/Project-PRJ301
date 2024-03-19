@@ -16,7 +16,7 @@
                
                         
         
-        <fmt:setBundle basename="language.english" var="a" scope="session"/>
+        <fmt:setBundle basename="language.english" var="a" />
             <div class="col-lg-12">
                 <div class="breadcrumbs-menu">
                     <ul>

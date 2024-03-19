@@ -22,6 +22,37 @@
                 height: 120px;
             }
         </style>
+        <style>
+            img{
+                width: 200px;
+                height: 120px;
+            }
+            .table-title {
+                padding-bottom: 15px;
+                background: yellow;
+                color: black;
+                padding: 16px 30px;
+                margin: -20px -25px 10px;
+                border-radius: 3px 3px 0 0;
+
+            }
+            body {
+                color: #566787;
+                background: darkturquoise;
+                font-family: 'Varela Round', sans-serif;
+                font-size: 13px;
+            }
+            .table-wrapper {
+    padding: 20px 25px;
+    margin: 30px 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    background-color: yellow;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #F2EFE3;
+}
+        </style>
     <body>
         <fmt:setLocale value="en_US"/>
                         <c:if test="${param.lang=='vi'}">
@@ -95,6 +126,36 @@
             </div>
 
         </div>
+                            <div class="container">
+        <div class="row">
+           
+            <div class="col-lg-6 col-md-6 col-12">
+                
+                    <div class="language-area">
+                        <fmt:setLocale value="en_US"/>
+                        <c:if test="${param.lang=='vi'}">
+                            <fmt:setLocale value="vi_VN"/>
+                        </c:if>
+               
+                        <form action="" method="get">
+                            <input type="radio" name="lang" value="en">
+                            <label for="en">English</label>
+                            <input type="radio" name="lang" value="vi">
+                            <label for="vi">Vietnamese</label>
+                            <input type="submit" value="Change Language"/>
+                        </form>
+
+                        
+                    </div>
+                
+                <fmt:setBundle basename="language.english" var="a"/>
+
+
+            </div>
+            
+        </div>
+                 <a href="home"><button type="button" class="btn btn-primary"><fmt:message bundle="${a}" key="32"/></button>
+    </div>
 
 
         <script src="${pageContext.request.contextPath}/js/manager.js" type="text/javascript"></script>

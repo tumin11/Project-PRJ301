@@ -9,7 +9,7 @@
                
                         
         
-        <fmt:setBundle basename="language.english" var="a" scope="session"/>
+        <fmt:setBundle basename="language.english" var="a" />
     <!-- footer-top-start -->
     <div class="footer-top">
         <div class="container">

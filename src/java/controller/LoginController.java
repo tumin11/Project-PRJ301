@@ -71,7 +71,7 @@ public class LoginController extends HttpServlet {
             DBContext db = new DBContext();
             Account a=db.login(username, password);
             if(a==null){
-                request.setAttribute("mess", "You need to enter right username and password.If you create new account,your password and confirm password should be the same.");
+                request.setAttribute("mess", "You need to enter right username and password.If you create new account,your password and confirm password should be the same,the username must be unique.");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }else{
                 HttpSession session=request.getSession();
